@@ -1,0 +1,14 @@
+import sqlite3
+
+conexao = sqlite3.connect ('Sql2')
+
+sql_cliente = '''
+CREATE TABLE cliente (
+id integer not null autoincrement,
+nome text(100), 
+cpf text(11) not null,
+constraint cliente_un unique (CPF));'''
+
+
+cursor = conexao.cursor ()
+cursor.execute(sql_cliente)
